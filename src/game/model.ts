@@ -270,21 +270,21 @@ export const initGameState = (players: { [key in Color]?: string }): GameState =
       id: v4(),
       color,
       name: players[color]!,
-      generalStock: { m: 0, t: 7 },
-      personalSupply: { m: 1, t: 4 },
-      keys: 1,
-      privilege: 1,
-      actions: 1,
-      bank: 1,
-      book: 1,
+      generalStock: { m: 0, t: 6 },
+      personalSupply: { m: 99, t: 99 },
+      keys: 5,
+      privilege: 4,
+      actions: 6,
+      bank: 4,
+      book: 4,
       points: 0,
-      readyMarkers: [],
+      readyMarkers: Array(10).fill(["4 Actions"]).flat().concat(["Office","Office"]),
       usedMarkers: [],
       unplacedMarkers: [],
     }))
   );
   const baseGenStock = 6;
-  const basePersonalSup = 5;
+  const basePersonalSup = 99;
   for (let index = shuffledPlayers.length - 1; index >= 0; index--) {
     const player = shuffledPlayers[index];
     let genStock = baseGenStock - index;
